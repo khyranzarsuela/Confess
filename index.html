@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Confession Letter</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fce4ec;
+          transition: 0.8s ease-in;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .orange{
+         background: orange;
+         transition: 0.8s ease-in;
+    }
+    body .orange{
+          background: orange;
+            transition: 0.8s ease-in;
+    }
+
+    .envelope {
+        width: 460px;
+        height: 320px;
+        background: orange;
+        position: relative;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: transform 0.3s;
+    }
+
+    .envelope:hover {
+        transform: scale(1.05);
+    }
+   
+
+    .envelope::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-left: 232px solid transparent;
+        border-right: 232px solid transparent;
+        border-top: 150px solid rgb(230, 150, 1);
+    }
+
+    .label {
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .paper {
+        position: absolute;
+        width: 460px;
+        height: 320px;
+        background: white;
+        top: 1.5rem;
+        left: 0px;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        opacity: 0;
+        z-index: 2;
+        transition: all 0.5s ease;
+    }
+
+    .paper.show {
+        top: 0rem;
+        opacity: 1;
+    }
+
+    .paper h3 {
+        margin-top: 0;
+        color: #e91e63;
+        text-align: center;
+    }
+
+    .paper p {
+        font-size: 14px;
+        color: #333;
+        text-align: center;
+    }
+
+@media (max-width: 575.98px) {
+
+    .envelope {
+        width: 420px;
+        height: 440px;
+    }
+
+    .envelope::before {
+        border-left: 130px solid transparent;
+        border-right: 130px solid transparent;
+        border-top: 85px solid #d81b60;
+    }
+
+    .label {
+        font-size: 16px;
+        bottom: 18px;
+    }
+
+    .paper {
+        width: 300px;
+        height: auto;
+        left: -20px;
+        top: -260px;
+        padding: 22px;
+        font-size: 16px;
+    }
+
+    .paper.show {
+        top: -290px;
+    }
+
+    .paper h3 {
+        font-size: 20px;
+    }
+
+    .paper p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+
+</style>
+</head>
+<body id="body">
+
+<div class="envelope" onclick="openLetter()">
+    <div class="paper" id="paper">
+        <h3>Hi! Jamaica Orange 💖</h3>
+        <p>
+            I just want to say something simple but honest.<br><br>
+            I like you, and I’ve been meaning to tell you this for a while.
+            No pressure, just my feelings. 😊
+        </p>
+    </div>
+    <div class="label">Please Click✉️</div>
+</div>
+
+<script>
+    function openLetter() {
+        const bg = document.getElementById("body");
+        document.getElementById("paper").classList.toggle("show");
+        bg.classList.toggle("orange");
+        
+    }
+</script>
+
+</body>
+</html>
